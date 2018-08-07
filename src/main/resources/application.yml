@@ -1,0 +1,35 @@
+#配置端口号以及拦截路径
+server:
+  port: 8082
+  servlet:
+    path: /springboot
+
+#配置视图解析器
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+
+  #配置关闭模板引擎
+  thymeleaf:
+    cache: false
+    enabled: false
+
+  #配置MySQL数据库连接
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/idea?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123
+
+  #配置jpa
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
